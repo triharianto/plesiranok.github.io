@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile document",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoUrl": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp created (FieldValue.serverTimestamp())" }
+      },
+      "required": ["id", "email", "createdAt"]
+    },
+    "FavoritePlace": {
+      "title": "FavoritePlace",
+      "description": "User saved favorite place",
+      "type": "object",
+      "properties": {
+        "placeId": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "region": { "type": "string" },
+        "address": { "type": "string" },
+        "rating": { "type": "number" },
+        "priceTag": { "type": "string" },
+        "contactNumber": { "type": "string" },
+        "savedAt": { "type": "string", "format": "date-time", "description": "Timestamp saved (FieldValue.serverTimestamp())" }
+      },
+      "required": ["placeId", "name", "category", "region", "savedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "User profile documents"
+    },
+    "/users/{userId}/favorites/{placeId}": {
+      "schema": { "$ref": "#/entities/FavoritePlace" },
+      "description": "User saved favorite places subcollection"
+    }
+  }
+}

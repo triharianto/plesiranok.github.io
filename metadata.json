@@ -1,0 +1,6 @@
+{
+  "name": "PLESIRAN",
+  "description": "Aplikasi panduan berwisata Indonesia untuk wisatawan lokal dan mancanegara dengan hotel, wisata, kuliner, transportasi, penerjemah daerah, dan peta.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
